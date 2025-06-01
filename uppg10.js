@@ -8,9 +8,29 @@ function uppg10(){
     // other ska innehålla alla andra tal
     // returnera ett objekt med de tre arrayerna
 
-  
+    function sortNumbers(arrays) {
+
+      const bigEven = [];
+      const smallOdd = [];
+      const other = [];
+
+      for (let number of arrays) {
+        if (number > 10 && number % 2 === 0) {
+            bigEven.push(number);
+          } else if (number < 10 && number % 2 !== 0) {
+            smallOdd.push(number);
+          } else {
+                other.push(number);
+          } 
+      }
+        
+      return {bigEven, smallOdd, other};
+    }
+
+  const resultat = sortNumbers(numbers);
+
+  console.log(resultat);
     
-  
   }
   
   module.exports = { uppg10 };
